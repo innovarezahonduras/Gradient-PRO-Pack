@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient PRO Pack - Transforma tu Feed de Instagram y YouTube</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Paleta de Colores y Tipografía */
+        :root {
+            --color-negro: #0A0A0A;
+            /* Negro Oscuro */
+            --color-azul-oscuro: #1A0033;
+            /* Base casi negro con toque morado */
+            --color-morado-principal: #6A0DAD;
+            /* Morado Vibrante */
+            --color-morado-secundario: #4B0082;
+            /* Morado Índigo Oscuro */
+            --color-acento-azul: #00BFFF;
+            /* Azul Cielo Profundo (Acento juvenil) */
+            --color-blanco: #FFFFFF;
+            --color-gris-claro: #AAAAAA;
+            --fuente-principal: 'Poppins', sans-serif;
+        }
+
+        /* Estilos Generales y Reseteo */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fuente-principal);
+            line-height: 1.6;
+            background-color: var(--color-azul-oscuro);
+            color: var(--color-blanco);
+        }
+
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        /* Botón de Llamada a la Acción (CTA) - Dinámico y Llamativo */
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--color-blanco);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            /* Degradado de Botón */
+            background: linear-gradient(45deg, var(--color-morado-principal) 0%, var(--color-acento-azul) 100%);
+            box-shadow: 0 10px 20px rgba(106, 13, 173, 0.5);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 191, 255, 0.6);
+        }
+
+        .cta-btn-flotante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Header / Hero Section - Impacto Inmediato */
+        .seccion-hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--color-negro) 0%, var(--color-morado-secundario) 100%);
+            border-bottom: 5px solid var(--color-acento-azul);
+        }
+
+        .hero-titulo {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            background: -webkit-linear-gradient(45deg, var(--color-morado-principal), var(--color-acento-azul));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .hero-subtitulo {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-gris-claro);
+            margin-bottom: 30px;
+        }
+
+        /* Secciones de Contenido */
+        .seccion {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .seccion:nth-child(even) {
+            background-color: var(--color-negro);
+        }
+
+        .titulo-seccion {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--color-blanco);
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-morado-principal);
+            border-radius: 2px;
+        }
+
+        /* Imagenes de ejemplo (Responsive) */
+        .imagen-ejemplo {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* Uso y Pasos */
+        .pasos-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .paso-item {
+            max-width: 300px;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: var(--color-morado-secundario);
+            border: 1px solid var(--color-morado-principal);
+            text-align: left;
+        }
+
+        .paso-item h3 {
+            font-size: 2rem;
+            color: var(--color-acento-azul);
+            margin-bottom: 10px;
+        }
+
+        /* Dimensiones */
+        .dimension-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .dimension-item {
+            width: 100%;
+            max-width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid var(--color-morado-principal);
+            text-align: left;
+            background-color: var(--color-negro);
+        }
+
+        .dimension-item img {
+            max-height: 250px;
+            width: auto;
+            display: block;
+            margin: 15px auto;
+            border-radius: 8px;
+        }
+
+        /* Extras y Beneficios */
+        .extras-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .extra-item {
+            max-width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--color-acento-azul);
+            background-color: var(--color-azul-oscuro);
+        }
+
+        .extra-item p {
+            font-weight: 400;
+        }
+
+        .extra-img-container {
+            max-width: 40%;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        /* Testimonios Grid */
+        .testimonio-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        /* Testimonio Card Style (The "Recuadro Bonico") */
+        .testimonio-card {
+            max-width: 350px;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: var(--color-morado-secundario);
+            border: 1px solid var(--color-acento-azul);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(106, 13, 173, 0.3) inset;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--color-morado-principal) inset;
+        }
+
+        .testimonio-card p {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--color-gris-claro);
+            margin-bottom: 20px;
+        }
+
+        .testimonio-autor {
+            font-weight: 700;
+            color: var(--color-blanco);
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Social Media Source Icon/Label */
+        .testimonio-source {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 15px;
+            padding: 8px 15px;
+            border-radius: 8px;
+            background-color: var(--color-negro);
+            border: 1px solid var(--color-morado-principal);
+            width: fit-content;
+            margin: 15px auto 0;
+        }
+
+        /* Emojis como íconos */
+        .icon-ig::before {
+            content: "📸";
+            font-size: 1.2rem;
+            margin-right: 4px;
+        }
+
+        .icon-yt::before {
+            content: "▶️";
+            font-size: 1.2rem;
+            margin-right: 4px;
+        }
+
+        .icon-cm::before {
+            content: "💻";
+            font-size: 1.2rem;
+            margin-right: 4px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            text-align: left;
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: var(--color-azul-oscuro);
+            border-radius: 10px;
+        }
+
+        .faq-item h3 {
+            color: var(--color-morado-principal);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        /* ESTILOS DE CONTACTO */
+        .seccion-contacto {
+            padding: 40px 20px;
+            background-color: var(--color-azul-oscuro);
+        }
+
+        .contacto-box {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contacto-box p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--color-gris-claro);
+            margin-bottom: 25px;
+        }
+
+        .redes-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .red-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--color-blanco);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .red-link:hover {
+            transform: translateY(-2px);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .red-icon {
+            font-size: 1.8rem;
+            margin-right: 10px;
+        }
+
+        .red-link[data-red="instagram"] {
+            color: #E1306C;
+            border: 1px solid #E1306C;
+        }
+
+        .red-link[data-red="pinterest"] {
+            color: #BD081C;
+            border: 1px solid #BD081C;
+        }
+
+        .red-link[data-red="email"] {
+            color: var(--color-acento-azul);
+            border: 1px solid var(--color-acento-azul);
+        }
+
+        /* NUEVA SECCIÓN DE GARANTÍA EXCLUSIVA */
+        .seccion-garantia {
+            padding: 60px 20px;
+            text-align: center;
+            /* Nuevo: Fondo oscuro usando los colores de la paleta */
+            background: linear-gradient(180deg, var(--color-morado-secundario) 0%, var(--color-negro) 100%);
+            color: var(--color-blanco);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .garantia-titulo {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            /* Texto blanco sobre la caja morada */
+            color: var(--color-blanco);
+        }
+
+        .garantia-caja {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .garantia-texto {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            /* Texto blanco sobre el fondo morado */
+            color: var(--color-blanco);
+        }
+
+        .garantia-dias {
+            font-size: 4rem;
+            font-weight: 900;
+            /* Número 7 en el color de acento azul para que destaque */
+            color: var(--color-acento-azul);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .garantia-dias span {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 400;
+            /* Texto descriptivo en gris claro */
+            color: var(--color-gris-claro);
+            margin-top: 5px;
+        }
+
+        /* FIN NUEVA SECCIÓN DE GARANTÍA EXCLUSIVA */
+
+        /* Precios */
+        .seccion-precio {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--color-azul-oscuro) 0%, var(--color-morado-secundario) 100%);
+            border-top: 5px solid var(--color-acento-azul);
+        }
+
+        .precio-original {
+            font-size: 1.5rem;
+            color: var(--color-gris-claro);
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+
+        .precio-promocion {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--color-acento-azul);
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+            line-height: 1;
+        }
+
+        .precio-promocion span {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-blanco);
+        }
+
+        /* Se remueve .entrega-garantia ya que se mueve a la sección exclusiva */
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 768px) {
+            .hero-titulo {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitulo {
+                font-size: 1.2rem;
+            }
+
+            .precio-promocion {
+                font-size: 3rem;
+            }
+
+            .dimension-grid,
+            .pasos-grid,
+            .extras-grid,
+            .testimonio-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn-flotante {
+                font-size: 1rem;
+                padding: 12px 20px;
+            }
+
+            .garantia-titulo {
+                font-size: 2rem;
+            }
+
+            .garantia-dias {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Botón Flotante de CTA (Persistente) -->
+    <a href="https://pay.hotmart.com/J102366883U" target="_blank" class="cta-btn cta-btn-flotante">¡Comprar Acceso
+        Único!</a>
+
+    <!-- 1. SECCIÓN HERO (Presentación e Impacto) -->
+    <header class="seccion-hero">
+        <div class="contenedor">
+            <h1 class="hero-titulo">Gradient PRO Pack: <br> Acceso Único para un Feed IMPARABLE</h1>
+            <p class="hero-subtitulo">Kit de recursos para tu contenido visual. Más de 300 backgrounds en degradados con
+                un toque único y profesional.</p>
+
+            <a href="https://pay.hotmart.com/J102366883U" target="_blank" class="cta-btn">Quiero Mi Pack PRO Ahora (Pago
+                Único)</a>
+        </div>
+    </header>
+
+    <!-- 2. QUÉ ES EL PRODUCTO (Información Detallada) -->
+    <section id="producto" class="seccion">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">¿Qué es el Gradient PRO Pack? 🎨</h2>
+            <p>Es un Kit de recursos para tu contenido visual en Instagram. Una colección de backgrounds en
+                degradados perfectos para darle un toque diferente, llamativo y profesional a tu feed de Instagram.
+            </p>
+            <p><strong>¿Quieres agregar un toque diferente a tus publicaciones?</strong> Con este pack, compartir tu
+                conocimiento en piezas únicas y coloridas es más fácil que nunca. El kit incluye tres tamaños
+                optimizados para tus publicaciones y stories, asegurando que tus diseños se vean impecables sin importar
+                el formato. ¡Actualmente con más de 300 diseños diferentes!</p>
+        </div>
+    </section>
+
+    <!-- 3. CÓMO USAR (Proceso Simple) -->
+    <section id="como-usar" class="seccion">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">PARA USARLOS SOLO TIENES QUE HACER 3 PASOS:</h2>
+            <p>COMPARTE TU CONOCIMIENTO EN PIEZAS ÚNICAS Y COLORIDAS. ¡No necesitas ser un experto! Los fondos están
+                listos para ser utilizados en tu aplicación de diseño favorita (Canva, Photoshop, etc.).</p>
+
+            <div class="pasos-grid">
+                <div class="paso-item">
+                    <h3>1. Escoge</h3>
+                    <p>Selecciona uno de los muchos degradados, patrones o fondos animados del Pack.</p>
+                </div>
+                <div class="paso-item">
+                    <h3>2. Crea y Sube</h3>
+                    <p>Crea el diseño según el tamaño que necesites y sube la imagen del degradado.</p>
+                </div>
+                <div class="paso-item">
+                    <h3>3. Reemplaza</h3>
+                    <p>Agrega la imagen del degradado y selecciona "Reemplazar fondo" en tu editor, o ajústalo a tu
+                        medida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. EJEMPLO APLICADO (Visualización de Beneficio) -->
+    <section class="seccion seccion-visual">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">Así se verá tu Feed de Instagram ✨</h2>
+            <p>Mira cómo los diseños del Gradient PRO Pack transforman tu feed en algo que salta a la vista. Diseño
+                utilizado en la imagen:</p>
+
+            <!--  -->
+            <img src="/feed.png" width="40%"
+                alt="Ejemplo de un feed de Instagram dinámico y colorido utilizando los degradados del Gradient PRO Pack."
+                class="imagen-ejemplo">
+            <br>
+            <a href="https://pay.hotmart.com/J102366883U" target="_blank" class="cta-btn"
+                style="margin-top: 30px;">¡Quiero un Feed Así!</a>
+        </div>
+    </section>
+
+    <!-- 5. DIMENSIONES Y USOS (Explicación del Valor con Imágenes) -->
+    <section id="dimensiones" class="seccion">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">Tamaños Óptimos para Cada Publicación 📐</h2>
+            <p>Tendrás los 3 tamaños recomendados y con la resolución perfecta para tus publicaciones de Instagram.</p>
+
+            <div class="dimension-grid">
+                <div class="dimension-item">
+                    <h3>1080x1080 (Cuadrado)</h3>
+                    <!--  -->
+                    <img src="/cuadrado.png" alt="Ejemplo de degradado en formato cuadrado 1080x1080."
+                        class="imagen-ejemplo">
+                    <p><strong>Perfecto para tus publicaciones e infografías.</strong></p>
+                </div>
+                <div class="dimension-item">
+                    <h3>1080x1350 (Vertical)</h3>
+                    <!--  -->
+                    <img src="/vertical.png" alt="Ejemplo de degradado en formato vertical 1080x1350."
+                        class="imagen-ejemplo">
+                    <p><strong>El formato vertical y el predilecto para tus carruseles.</strong></p>
+                </div>
+                <div class="dimension-item">
+                    <h3>1080x1920 (Story/Reel)</h3>
+                    <!--  -->
+                    <img src="/stories.png" alt="Ejemplo de degradado en formato story/reel 1080x1920."
+                        class="imagen-ejemplo">
+                    <p><strong>Perfecto para tus stories, reels y portadas de reels.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. EXTRAS Y BONOS -->
+    <section id="extras" class="seccion seccion-extras">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">SIEMPRE TE TENGO UN EXTRA, PORQUE TE MERECES MÁS... 🎁</h2>
+            <p>Al adquirir tu Pack PRO con pago único, obtienes acceso de por vida no solo a los espectaculares
+                degradados, sino también a estos bonos exclusivos:</p>
+
+            <div class="extras-grid">
+                <div class="extra-item">
+                    <h3>Fondos con Efecto Patrón (BONUS)</h3>
+                    <p>Diseños con el efecto patrón para texturas sutiles y estilos únicos.</p>
+                </div>
+                <div class="extra-item">
+                    <h3>Fondos con Efecto Líquido (BONUS)</h3>
+                    <p>Fondos con el efecto líquido para un look moderno y orgánico.</p>
+                </div>
+                <div class="extra-item">
+                    <h3>Fondos con Efecto Satinado (BONUS)</h3>
+                    <p>Fondos con el efecto satinado ideales para publicaciones elegantes.</p>
+                </div>
+            </div>
+
+            <p style="font-weight: 600; margin-top: 30px; color: var(--color-acento-azul);">¡IMPORTANTE! Todos estos
+                diseños incrementan y se continúan actualizando CADA MES con nuevos diseños.</p>
+
+            <div class="extra-img-container">
+                <!--  -->
+                <img src="/bonus.png"
+                    alt="Ejemplo de fondos con efectos patrón, líquido y satinado incluidos como extras."
+                    class="imagen-ejemplo">
+            </div>
+
+            <div class="contenedor">
+                <h3 class="titulo-seccion">🎥 Tutoriales de Diseño Exclusivos (BONUS)</h3>
+                <p style="font-weight: 400; max-width: 800px; margin: 10px auto 0;">Acceso a la comunidad privada con
+                    videos tutoriales paso a paso para sacarle el máximo provecho a cada diseño. ¡Solo para la comunidad
+                    que
+                    ha comprado el paquete!</p>
+            </div>
+        </div>
+    </section>
+
+    <!--     7. LO QUE DICEN (Prueba Social)
+    <section class="seccion seccion-testimonios" style="background-color: var(--color-negro);">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">Lo Que Dicen Nuestros Clientes 💬</h2>
+
+            <div class="testimonio-grid">
+                <div class="testimonio-card">
+                    <p>"Mi feed pasó de ser gris a ser la sensación en mi nicho. Ahorré horas de diseño.
+                        ¡Imprescindible!"</p>
+                    <strong class="testimonio-autor">Sofía L.</strong>
+                    <div class="testimonio-source icon-ig">Creadora de Contenido</div>
+                </div>
+
+                <div class="testimonio-card">
+                    <p>"El valor por el pago único es impresionante. Con la actualización mensual, siempre tengo diseños
+                        frescos."</p>
+                    <strong class="testimonio-autor">Alex D.</strong>
+                    <div class="testimonio-source icon-yt">Youtuber / Emprendedor</div>
+                </div>
+
+                <div class="testimonio-card">
+                    <p>"La variedad de colores y tamaños es perfecta. Ya no tengo que preocuparme por ajustar la
+                        resolución."</p>
+                    <strong class="testimonio-autor">Elena V.</strong>
+                    <div class="testimonio-source icon-cm">Community Manager</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- 8. PREGUNTAS FRECUENTES -->
+    <section id="faq" class="seccion">
+        <div class="contenedor" style="max-width: 800px;">
+            <h2 class="titulo-seccion">PREGUNTAS FRECUENTES 🤔</h2>
+
+            <div class="faq-item">
+                <h3>¿Cómo accedo al kit?</h3>
+                <p>Apenas realices el pago por la plataforma de Hotmart, te llegará un correo de confirmación y el
+                    acceso. Debes crear una cuenta en Hotmart con el correo que realizaste tu compra, y dentro de tus
+                    compras estará el kit. ¡Entrega inmediata!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>¿Cuáles son las formas de pago?</h3>
+                <p>El pago es a través de la plataforma de Hotmart, con pagos seguros y con múltiples métodos de
+                    pago dependiendo de tu país. También realiza la conversión a tu moneda local.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. SOPORTE Y CONTACTO -->
+    <section class="seccion-contacto">
+        <div class="contenedor">
+            <center>
+                <h2 class="titulo-seccion" style="color: var(--color-blanco);">¿Necesitas Ayuda o Tienes Preguntas? 💬
+                </h2>
+            </center>
+            <div class="contacto-box">
+                <p>Si tienes alguna duda sobre el Pack, el proceso de pago en Hotmart o necesitas asistencia, no dudes
+                    en contactarnos. ¡Te responderemos lo antes posible!</p>
+
+                <div class="redes-grid">
+                    <!-- Enlace de Instagram -->
+                    <a href="https://www.instagram.com/innovarezahonduras" class="red-link" target="_blank"
+                        data-red="instagram">
+                        <span class="red-icon">📷</span>
+                        Instagram
+                    </a>
+                    <!-- Enlace de Pinterest -->
+                    <a href="https://www.pinterest.com/innovarezahonduras" class="red-link" target="_blank"
+                        data-red="pinterest">
+                        <span class="red-icon">📌</span>
+                        Pinterest
+                    </a>
+                    <!-- Enlace de Correo Electrónico -->
+                    <a href="mailto:innovarezahonduras@gmail.com" class="red-link" data-red="email">
+                        <span class="red-icon">📧</span>
+                        Correo Electrónico
+                    </a>
+                </div>
+                <p style="margin-top: 30px; font-size: 0.95rem;">Soporte Rápido: Síguenos en Instagram para un
+                    contacto más directo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. GARANTÍA EXCLUSIVA (NUEVA SECCIÓN LLAMATIVA) -->
+    <section id="garantia-exclusiva" class="seccion-garantia">
+        <div class="contenedor">
+            <div class="garantia-caja">
+                <p class="garantia-texto">Tu compra está 100% libre de riesgos. Tenemos una...</p>
+                <h2 class="garantia-titulo">GARANTÍA DE DEVOLUCIÓN TOTAL</h2>
+                <p class="garantia-dias">
+                    7 DÍAS
+                    <span>Si el Gradient PRO Pack no es lo que esperabas, ¡te devolvemos el 100% de tu dinero!</span>
+                </p>
+                <!-- Texto descriptivo ahora es blanco sobre el fondo morado -->
+                <p style="font-size: 1.1rem; font-weight: 500; color: var(--color-blanco);">Hotmart procesa tu reembolso
+                    de forma segura, sin preguntas. No tienes nada que perder.</p>
+                <a href="https://pay.hotmart.com/J102366883U" target="_blank" class="cta-btn"
+                    style="margin-top: 20px;">¡Comprar con Confianza Total!</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 11. SECCIÓN DE PRECIO Y CTA FINAL (Conversión) -->
+    <section id="comprar" class="seccion-precio">
+        <div class="contenedor">
+            <h2 class="titulo-seccion" style="color: var(--color-blanco);">¡Oportunidad Exclusiva! Desbloquea tu Kit PRO
+            </h2>
+
+            <p class="precio-original">Precio Original: <del>$31</del></p>
+            <p class="precio-promocion">
+                PAGO ÚNICO: $4.99 USD
+            </p>
+
+            <a href="https://pay.hotmart.com/J102366883U" target="_blank" class="cta-btn">¡SÍ! Quiero Acceso al Pack PRO
+                por $4.99</a>
+
+            <div style="margin-top: 30px; font-weight: 600;">
+                <p>✅ Entrega Inmediata + Actualizaciones PERMANENTES</p>
+                <p style="font-size: 0.9rem; font-weight: 300; color: var(--color-gris-claro);">Acceso de por vida con
+                    nuevos diseños cada mes.</p>
+            </div>
+
+            <p style="font-size: 1rem; color: var(--color-gris-claro); margin-top: 20px;">Compra segura y flexible a
+                través de Hotmart. El precio incluye todos los bonos y actualizaciones futuras.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contenedor">
+            <p>&copy; 2025 Gradient PRO Pack. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
